@@ -1,0 +1,26 @@
+# Copy this file to devices/<maker>-<model>.yaml, fill it in and open a pull request.
+# The hanbi.net Hardware pages are built from these fields.
+
+name: ""            # as the maker sells it
+maker: ""
+model: ""           # exact model or SKU
+tier: community     # certified | community | not-working (only Hanbi sets certified)
+hardware:
+  cpu: ""
+  ram: ""
+  storage: ""
+  ports: ""         # count, speed and NIC chipset
+tested:
+  opnsense: ""      # e.g. 26.7.x
+  pazuzu: ""        # app and plugin version
+  date: ""          # YYYY-MM-DD
+  by: ""            # GitHub handle, credited on the page
+result: ""          # clean run, or what failed and at which stage
+known_issues: []
+notes: ""
+photos: []          # no serial numbers, IP addresses, keys or QR codes in shot
+buy_links:          # optional; never affects the tier
+  - store: ""
+    url: ""
+    region: ""
+    paid: false     # true if Hanbi earns from it

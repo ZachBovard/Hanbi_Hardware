@@ -1,0 +1,27 @@
+# Proof assets for launch posts and the hanbi.net Hardware pages.
+# Each entry says exactly what was tested, so anyone can rerun it.
+
+assets:
+  - id: proof-adblock-vpn
+    type: screenshot pair + caption
+    test: adblock.turtlecute.org (130 test items)
+    setup:
+      device: same phone for both runs
+      before: no VPN, no blocking
+      after: on cellular, through the Pazuzu VPN to home, with Pazuzu's block lists
+    result:
+      before: 8 of 130 blocked (6%)
+      after: 126 of 130 blocked (97%)
+    note: the last 4 vary from browser to browser and show up in almost every run
+    files:
+      before: assets/proof/before-6pct.png
+      after: assets/proof/after-97pct.jpg
+    use:
+      - launch posts (OPNsense forum, r/opnsense)
+      - hanbi.net Hardware pages, proof section
+    caption: |
+      Same phone, same test (adblock.turtlecute.org):
+      Without Pazuzu: 8 of 130 blocked (6%)
+      On cellular, through the Pazuzu VPN back home: 126 of 130 blocked (97%)
+      The last 4 change from browser to browser and turn up in almost every run.
+      Try it on your own setup and tell us what you get.
