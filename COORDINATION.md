@@ -13,15 +13,16 @@ This repo is the source for the Hardware section of hanbi.net. Device entries ar
 
 ## Pages the site builds
 
-Hardware home, then five pages under it:
+Hardware home, then six pages under it:
 
 1. **Hanbi Certified**: boxes that passed the public test; they carry the badge.
 2. **Community tested**: clean runs reported by contributors, reviewed by Hanbi.
 3. **Known not to work**: tried and failed, with the reason and the version.
-4. **Build your own Hanbi**: parts list, print files and the step-by-step build.
-5. **Contribute**: the device template and how to send a pull request.
+4. **Untested candidates**: boxes picked from research that nobody has run the public test on yet.
+5. **Build your own Hanbi**: parts list, print files and the step-by-step build.
+6. **Contribute**: the device template and how to send a pull request.
 
-Each device in the first three lists gets its own page, built from its file in `devices/`.
+Each device in the first four lists gets its own page, built from its file in `devices/`.
 
 ## Tiers
 
@@ -30,6 +31,9 @@ Each device in the first three lists gets its own page, built from its file in `
 | Hanbi Certified | Hanbi, after running the certification test | Passed the public test on a unit Hanbi ran |
 | Community tested | A contributor's pull request, reviewed by Hanbi | Someone ran the public test and sent a clean result |
 | Known not to work | Anyone, reviewed by Hanbi | Tried and failed, with the reason and the version |
+| Untested candidates | Hanbi, from research | Not yet run through the public test |
+
+An untested candidate leaves `tier` blank. It moves to a tier once a run of the public test is on record.
 
 A home build is "built to the certified design". It becomes Community tested once its builder runs the public test and sends the result.
 
@@ -58,6 +62,7 @@ Every page with a paid link opens with this disclosure, near the links:
 - A device a maker gave or lent Hanbi says so: "[Maker] gave Hanbi this unit for testing."
 - Where the maker sells direct, that link comes first.
 - Known not to work devices get no buy links.
+- Untested candidates get no paid links.
 
 ## Build your own Hanbi
 
