@@ -1,0 +1,34 @@
+# Candidate entry from research. Not tested: tier stays blank until a run of the public test is on record.
+
+name: "Vault Pro VP2430e – 4x 2.5G Port Intel N150"
+maker: "Protectli"
+model: "VP2430e"
+tier: ""            # certified | community | not-working (only Hanbi sets certified)
+hardware:
+  cpu: "Intel N150, 4 cores, up to 3.6 GHz"
+  ram: "1x DDR5-4800 SO-DIMM slot, up to 64 GB (Protectli-tested modules listed in its KB)"
+  storage: "no eMMC; 1x M.2 2280 NVMe slot (PCIe 3 x2); 1x 2.5-inch SATA bay"
+  ports: "4x 2.5GbE, Intel I226-V (igc)"
+tested:
+  opnsense: ""
+  pazuzu: ""
+  date: ""
+  by: ""
+result: ""
+known_issues:
+  - "On coreboot, the OPNsense VGA installer defaults to serial output; video still shows but some boot messages may not (Protectli KB, OPNsense 25.7)"
+  - "Wi-Fi 5, 6 and 6E cards in the M.2 slot do not work on OPNsense (no FreeBSD driver)"
+notes: |
+  The VP2430 without its eMMC; Protectli says the two are otherwise identical.
+  Protectli lists OPNsense 25.7 as compatible.
+  A 2.5-inch SSD takes the place of the large internal heatsink.
+  Sources:
+  - https://eu.protectli.com/product/vp2430e/
+  - https://kb.protectli.com/kb/vp2430-component-compatibility/
+  - https://kb.protectli.com/kb/vp2430-hardware-overview/
+photos: []          # no serial numbers, IP addresses, keys or QR codes in shot
+buy_links:          # optional; never affects the tier
+  - store: "Protectli"
+    url: "https://eu.protectli.com/product/vp2430e/"
+    region: "EU"
+    paid: false

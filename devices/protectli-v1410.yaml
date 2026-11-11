@@ -1,0 +1,35 @@
+# Candidate entry from research. Not tested: tier stays blank until a run of the public test is on record.
+
+name: "Vault V1410 – 4 Port Intel N5105"
+maker: "Protectli"
+model: "V1410"
+tier: ""            # certified | community | not-working (only Hanbi sets certified)
+hardware:
+  cpu: "Intel Celeron N5105, 4 cores, 2.0 GHz (2.9 GHz turbo)"
+  ram: "8 GB LPDDR4-2933, soldered (not upgradable)"
+  storage: "32 GB eMMC on board; 1x M.2 2280 NVMe slot (PCIe 3)"
+  ports: "4x 2.5GbE, Intel I226-V (igc)"
+tested:
+  opnsense: ""
+  pazuzu: ""
+  date: ""
+  by: ""
+result: ""
+known_issues:
+  - "coreboot v0.9.4 stops many NVMe drives being detected on the V1210, V1211 and V1410; v0.9.3 and older are not affected (Protectli TSB-2026-001)"
+  - "Protectli's M.2 Wi-Fi modules do not work on OPNsense (no FreeBSD driver)"
+notes: |
+  Protectli recommends installing the OS on an NVMe SSD rather than the eMMC, which wears under heavy writes.
+  Protectli's own OPNsense compatibility table covers the V1XXX series up to OPNsense 24.7.
+  Sources:
+  - https://protectli.com/product/v1410/
+  - https://kb.protectli.com/kb/v1000-hardware-overview/
+  - https://kb.protectli.com/kb/technical-service-bulletin/
+  - https://kb.protectli.com/kb/how-to-install-opnsense-on-the-vault/
+  - https://kb.protectli.com/kb/wifi-on-the-vault/
+photos: []          # no serial numbers, IP addresses, keys or QR codes in shot
+buy_links:          # optional; never affects the tier
+  - store: "Protectli"
+    url: "https://protectli.com/product/v1410/"
+    region: "US"
+    paid: false
