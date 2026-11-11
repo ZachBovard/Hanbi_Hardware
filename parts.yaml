@@ -1,0 +1,96 @@
+# Parts tried with Pazuzu on OPNsense, and what happened. One entry per part and job.
+# result: works | fails | retest (tried, not settled yet)
+# No serial numbers, IP or hardware addresses, Wi-Fi names or keys here.
+
+parts:
+  # ---- Wi-Fi: hosting a network (the back door, a zone's own Wi-Fi) ----
+  - name: Ralink RT3071 USB Wi-Fi adapter
+    kind: wifi
+    driver: run
+    job: host a network (Pazuzu's Wi-Fi back door)
+    result: retest
+    tested: {opnsense: "26.7.8", pazuzu: "plugin 0.7.1", date: "2026-11-11", by: ZachBovard}
+    notes: >
+      The adapter Hanbi means to ship. Tried once, straight after another adapter had failed on the same box; it loaded
+      its firmware but did not come on air ("no carrier"). Plugin 0.7.2 tries it first; a run with it as the only
+      adapter is still to do.
+
+  - name: Realtek USB Wi-Fi adapter (rtwn driver; exact chip not recorded)
+    kind: wifi
+    driver: rtwn
+    job: host a network (Pazuzu's Wi-Fi back door)
+    result: fails
+    tested: {opnsense: "26.7.8", pazuzu: "plugin 0.7.0 and 0.7.1", date: "2026-11-11", by: ZachBovard}
+    notes: >
+      Made the network but never broadcast it. The system log says "cannot push beacon into chip, error 60" and "could
+      not move to RUN state". Unplugging and plugging it back in did not help. Other rtwn chips may behave
+      differently; send a result with the exact model.
+
+  - name: Intel Centrino Wi-Fi card (iwn driver)
+    kind: wifi
+    driver: iwn
+    job: host a network
+    result: fails
+    tested: {opnsense: "26.7.8", pazuzu: "plugin 0.7.0", date: "2026-11-11", by: ZachBovard}
+    notes: >
+      Intel's cards only join networks on FreeBSD; the system refuses to make a hosting device ("SIOCIFCREATE2 (wlan):
+      Operation not supported"). This is the driver, not a fault in the card.
+
+  # ---- Wi-Fi: joining a phone's hotspot as backup internet ----
+  - name: Intel Centrino Wi-Fi card (iwn driver)
+    kind: wifi
+    driver: iwn
+    job: join a phone's hotspot (backup internet)
+    result: works
+    tested: {opnsense: "26.7.8", pazuzu: "build 501, settings by hand; set by the wizard from build 502", date: "2026-11-11", by: ZachBovard}
+    notes: >
+      Joined an iPhone hotspot once the firewall's Wi-Fi device was set to Minimum standard 11ng, Pure 802.11n off,
+      WPA2, Pre-Shared Key and AES (modern). Left on 11a with WPA it never saw the phone. The wizard sets these itself
+      from build 502.
+
+  # ---- Network ports ----
+  - name: Intel i226-class 2.5G Ethernet (igc driver)
+    kind: ethernet
+    driver: igc
+    job: firewall ports (WAN, LAN, VLANs, spare ports)
+    result: works
+    tested: {opnsense: "26.7", pazuzu: "builds 490 to 510", date: "2026-11-11", by: ZachBovard}
+    notes: Ports, cable state and VLANs are all read and set by the wizard.
+
+  - name: USB Ethernet adapter (ue driver; exact model not recorded)
+    kind: ethernet
+    driver: ue
+    job: firewall ports (WAN, a management port)
+    result: works
+    tested: {opnsense: "26.7.8", pazuzu: "builds 490 to 510", date: "2026-11-11", by: ZachBovard}
+    notes: >
+      Works, but must stay plugged in. Kea DHCP refuses to start while a port it is set to serve is missing, so
+      unplugging one USB adapter stopped addresses being handed out on every network until it was back. Prefer a
+      built-in port for anything Kea serves.
+
+  # ---- Bluetooth (setting up a Hanbi box from the phone) ----
+  - name: TP-Link UB500 Bluetooth dongle
+    kind: bluetooth
+    chipset: Realtek RTL8761B
+    job: pair a phone to the box for setup
+    result: works
+    tested: {opnsense: "26.7", pazuzu: "plugin 0.6.x", date: "2026-11", by: ZachBovard}
+    notes: The dongle a Hanbi box ships with.
+
+  - name: CSR 8510 Bluetooth dongle
+    kind: bluetooth
+    chipset: CSR 8510
+    job: pair a phone to the box for setup
+    result: works
+    tested: {opnsense: "26.7", pazuzu: "plugin 0.6.x", date: "2026-11", by: ZachBovard}
+    notes: ""
+
+  # ---- Hotspots used as backup internet ----
+  - name: iPhone Personal Hotspot
+    kind: hotspot
+    job: backup internet over Wi-Fi
+    result: works
+    tested: {opnsense: "26.7.8", pazuzu: "build 501", date: "2026-11-11", by: ZachBovard}
+    notes: >
+      Switch on Maximize Compatibility and keep the Personal Hotspot screen open until the firewall has joined; an
+      iPhone hides its hotspot otherwise.
