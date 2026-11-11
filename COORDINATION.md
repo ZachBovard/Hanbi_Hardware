@@ -35,6 +35,8 @@ Each device in the first four lists gets its own page, built from its file in `d
 
 An untested candidate leaves `tier` blank. It moves to a tier once a run of the public test is on record.
 
+Every Hanbi box runs the full public test before it ships, so it ships Hanbi Certified.
+
 A home build is "built to the certified design". It becomes Community tested once its builder runs the public test and sends the result.
 
 ## Certification test
