@@ -10,6 +10,7 @@ This repo is the source for the Hardware section of hanbi.net. Device entries ar
 | `assets/proof/` | Screenshots that `manifest.yaml` points to |
 | `template/device.yaml` | The fields every device entry uses |
 | `devices/` | One YAML file per device (none yet) |
+| `guides/` | Step-by-step pages the site builds as they are; each cites its sources |
 
 ## Pages the site builds
 
@@ -23,6 +24,16 @@ Hardware home, then six pages under it:
 6. **Contribute**: the device template and how to send a pull request.
 
 Each device in the first four lists gets its own page, built from its file in `devices/`.
+
+## Guides
+
+| File | Page | State |
+| --- | --- | --- |
+| `guides/getting-opnsense.md` | Getting OPNsense: download it, check it, then try the live system or install it | Ready for the site. Checked 17 Nov 2026 against OPNsense 26.7; every step cites OPNsense's own pages |
+
+The same guide ships inside the Pazuzu download as `docs/GETTING_OPNSENSE.md`. It is written once, in Hanbi's working copy, and copied here; a change goes there first. It belongs before "Build your own Hanbi" finishes: a built box needs OPNsense on it before Pazuzu can set it up.
+
+For the site: keep the numbered sources and the "checked on" date on the page, and the last line about the OPNsense trademark.
 
 ## Tiers
 
