@@ -12,6 +12,17 @@ This repo is the source for the Hardware section of hanbi.net. Device entries ar
 | `devices/` | One YAML file per device (none yet) |
 | `guides/` | Step-by-step pages the site builds as they are; each cites its sources |
 
+## Rules for anything published from here (18 Nov 2026)
+
+- **Build from `main`.** The site builds the Hardware pages and Getting OPNsense from `main`; the working branch was
+  merged into it on 18 Nov.
+- **Screenshots carry the Hanbi stamp** before they go into `assets/proof/` or onto the site: a faint "© 2026 Hanbi
+  LLC · hanbi.net" across the middle and a credit band under the picture. The box chat stamps them. Photos of a
+  device's own hardware are ours to stamp too. A screenshot of someone else's website is not stamped as ours; the
+  two ad-block proof photos wait for Zach's call on a "test result" line instead.
+- **The access point is "Hanbi Anzu"** (or "Anzu by Hanbi"), never "Anzu" alone.
+- **Copyright lines name Hanbi LLC.**
+
 ## Pages the site builds
 
 Hardware home, then six pages under it:
