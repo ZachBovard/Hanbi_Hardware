@@ -1,4 +1,4 @@
-Hanbi Hardware — Copyright © 2026 Zachary Bovard
+Hanbi Hardware — Copyright © 2026 Hanbi LLC
 
 The device entries, parts results, proof assets and print files in this repository are licensed under the Apache
 License 2.0; see the LICENSE file.

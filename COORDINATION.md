@@ -88,4 +88,4 @@ The rest of the parts list is still being filled in.
 
 Print files are licensed Apache-2.0, with this line beside them:
 
-> Print files © 2026 Zachary Bovard, licensed Apache-2.0. The licence covers the files, not the Hanbi or Pazuzu names or logos. A box you print yourself is not a Hanbi box, and is not Hanbi Certified unless Hanbi certifies it.
+> Print files © 2026 Hanbi LLC, licensed Apache-2.0. The licence covers the files, not the Hanbi or Pazuzu names or logos. A box you print yourself is not a Hanbi box, and is not Hanbi Certified unless Hanbi certifies it.

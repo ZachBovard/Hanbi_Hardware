@@ -109,4 +109,4 @@ If the `installer` sign-in does nothing, sign in as `root`, choose the shell fro
 2. OPNsense, "Download": <https://opnsense.org/download/>
 3. OPNsense documentation, "Initial Installation & Configuration": <https://docs.opnsense.org/manual/install.html>
 
-OPNsense is a trademark of Deciso B.V. Pazuzu is an independent tool and is not part of the OPNsense project.
+Pazuzu is an independent tool for OPNsense. OPNsense is a trademark of Deciso B.V.; Pazuzu is not part of the OPNsense project and is not endorsed by Deciso.
