@@ -19,8 +19,10 @@ This repo is the source for the Hardware section of hanbi.net. Device entries ar
 - **Screenshots carry the Hanbi stamp** before they go into `assets/proof/` or onto the site: a faint "© 2026 Hanbi
   LLC · hanbi.net" across the middle and a credit band under the picture. The box chat stamps them. Photos of a
   device's own hardware are ours to stamp too. A screenshot of someone else's website is not stamped as ours; the
-  two ad-block proof photos carry "Test result · Hanbi LLC · hanbi.net" in its place (decided 18 Nov; the box chat's
-  `packaging/watermark.py --test-result`). Both are stamped so in `assets/proof/` (18 Nov).
+  two ad-block proof photos carry "Test by Hanbi LLC · <the day of the test> · hanbi.net" in its place (legal's
+  wording, 18 Nov; the box chat's `packaging/watermark.py --test-date "11 Nov 2026"`), so an old result never passes
+  for a current one. Both are stamped so in `assets/proof/` (tested 11 Nov). The tested site's name and logo are
+  never shown bigger than the screenshot already shows them.
 - **The access point is "Hanbi Anzu"** (or "Anzu by Hanbi"), never "Anzu" alone.
 - **Copyright lines name Hanbi LLC.**
 
